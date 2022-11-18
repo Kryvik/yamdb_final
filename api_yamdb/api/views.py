@@ -9,9 +9,9 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView
-
 from reviews.models import Comment, Review, User
 from titles.models import Category, Genre, Title
+
 from .confirmation_code import get_random_code
 from .custom_viewset import AuthViewSet, GetPostDelViewSet
 from .filter import TitlesFilter

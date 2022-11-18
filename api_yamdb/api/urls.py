@@ -5,7 +5,6 @@ from .views import (AuthSignUpViewSet, CategoryViewSet, CommentViewSet,
                     GenreViewSet, ReviewViewSet, TitlesViewSet,
                     UserGetTokenView, UserViewSet)
 
-
 router_v1 = DefaultRouter()
 router_v1.register('genres', GenreViewSet, basename='genres')
 router_v1.register('categories', CategoryViewSet, basename='categories')
