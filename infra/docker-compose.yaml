@@ -1,22 +1,27 @@
 version: '20.10.20'
 
+volumes:
+  postgres_data: 
+  static_value:
+  media_value:
+
 services:
   db:
     image: postgres:13.0-alpine
     volumes:
-      - /var/lib/postgresql/data/
+      - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.env
   web:
-    build: ../api_yamdb
+    image: kryvik/yamdb_api:v1.0
+    restart: always
     volumes:
       - static_value:/app/static/
-      - media_value:/app/media/
+      - media_value:/app/media/ 
     depends_on:
       - db
     env_file:
       - ./.env
-
 
   nginx:
     image: nginx:1.21.3-alpine
@@ -33,7 +38,3 @@ services:
 
     depends_on:
       - web
-
-volumes:
-  static_value:
-  media_value:
