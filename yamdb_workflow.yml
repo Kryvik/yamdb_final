@@ -55,7 +55,6 @@ jobs:
           context: api_yamdb
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_api:v1.0
-
   deploy:
     name: Deploy to remote server
     runs-on: ubuntu-latest
