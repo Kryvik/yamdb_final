@@ -1,5 +1,6 @@
 # API для проекта YaMDB в контейнере Docker
 ![Django-app workflow](https://github.com/Kryvik/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+https://kryvik.hopto.org/
 ### Описание проекта:
 
 Проект YamDB.
