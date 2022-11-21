@@ -1,4 +1,4 @@
-version: '20.10.20'
+version: '20.10.12'
 
 volumes:
   postgres_data: 
