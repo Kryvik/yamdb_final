@@ -88,7 +88,7 @@ class UserViewSet(viewsets.ModelViewSet):
         if self.request.method == 'GET':
             serializer = self.get_serializer(user)
             return Response(serializer.data)
-        if self.request.method == 'PATCH':
+        elif self.request.method == 'PATCH':
             partial = self.kwargs.pop('partial', False)
             serializer = MeSerializer(user, data=request.data,
                                       partial=partial, context=user)
