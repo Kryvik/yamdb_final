@@ -67,6 +67,9 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
+          docker login
+          ${{ secrets.DOCKER_USERNAME }}
+          ${{ secrets.DOCKER_PASSWORD }}
           sudo docker pull kryvik/yamdb_api:v1.0
           sudo docker stop $(sudo docker ps -a -q)
           sudo docker run --rm -d -p 5000:5000 kryvik/yamdb_api:v1.0 
