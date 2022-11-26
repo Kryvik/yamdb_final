@@ -52,7 +52,7 @@ jobs:
         with:
           context: ./api_yamdb/
           load: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_api:v1.0
+          tags: ${{ secrets.DOCKER_USERNAME }}/api_yamdb:v1.0
  
   deploy:
     name: Deploy to remote server
@@ -68,9 +68,9 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         script: |
           docker login
-          sudo docker pull kryvik/yamdb_api:v1.0
+          sudo docker pull kryvik/api_yamdb:v1.0
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 kryvik/yamdb_api:v1.0 
+          sudo docker run --rm -d -p 5000:5000 kryvik/api_yamdb:v1.0
  
   send_message:
     runs-on: ubuntu-latest
