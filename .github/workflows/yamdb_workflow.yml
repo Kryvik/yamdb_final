@@ -70,9 +70,9 @@ jobs:
           docker login
           ${{ secrets.DOCKER_USERNAME }}
           ${{ secrets.DOCKER_PASSWORD }}
-          sudo docker pull kryvik/yamdb_api:v1.0
+          sudo docker pull kryvik/api_yamdb:v1.0
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 kryvik/yamdb_api:v1.0 
+          sudo docker run --rm -d -p 5000:5000 kryvik/api_yamdb:v1.0 
  
   send_message:
     runs-on: ubuntu-latest
