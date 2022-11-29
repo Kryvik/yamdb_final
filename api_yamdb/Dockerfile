@@ -6,8 +6,8 @@ COPY requirements.txt ./
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY api_yamdb/ /app
 
-RUN pwd
+WORKDIR /app
 
 CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ] 
