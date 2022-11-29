@@ -11,7 +11,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', default='hihi')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['51.250.93.13', 'localhost', 'kryvik.hopto.org'] 
+ALLOWED_HOSTS = ['51.250.93.13', 'localhost', 'kryvik.hopto.org']
 
 
 INSTALLED_APPS = [
