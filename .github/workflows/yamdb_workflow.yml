@@ -51,7 +51,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./api_yamdb/
-          load: true
+          push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/api_yamdb:v1.0
  
   deploy:
